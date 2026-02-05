@@ -1,0 +1,182 @@
+
+/* sempre organizamos as tag no css de acordo com a ordem que ela aparecem no arquivo html */
+
+:root{ /* o elemento root é uma pseudo clase utilizado para criar variaveis globais (que atuaram em qualquer elemento que ele for colocada, assim não precisamos recriar a variavel em cada elemento) */ 
+    
+    /* aqui estamos usando variaveis, para facilitar na hora de trocar cores que se repetem em varias linha de codigos */
+    --cor-primaria: #000000; /* com "--nome-sobrenome" criamos nossa variavel */
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22D4FD;
+    --cor--hover: #272727;
+    --cor-hover-eu: #fe5f00;
+
+    --font-primaria: 'Krona One', sans-serif;
+    --font-secundaria: 'Montserrat', sans-serif;
+}
+
+*{
+    /* "reset" do css para padronizar as estilização em diferentes navegadores */
+    padding: 0; /* "padding" é a distancia do elememento até à margem */
+    margin: 0;
+}
+
+body{
+    /* tiramos o viewport de 100, por agora temos muitos elementos na pagina */
+    /*height: 100vh;*/ /* para fazer o elemento oculpar toda a pagina */ /* vh = viewport */
+    box-sizing: border-box; /* para não deixar que elementos filhos saiam dos elementos pais */
+    background-color: var(--cor-primaria); /* utilizamos "var" para adicionar nossa variavel */
+    color: var(--cor-secundaria);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15%; /* deixamos em porcentagem, pois a porcentagem deixa o site mais padronizado e se colocamos em pixes isso pode fazer com que o site se comporte diferente em diferentes tamanhos de telas.  */
+
+}
+
+.cabecalho__menu{
+    display: flex; /* sempre adicionamos o display flex em nosso elemento pai */
+    gap: 80px;
+    /*justify-content: space-between;*/ /* tentei usar o space-between, mas o certo era usar o gap */
+    
+}
+
+.cabecalho__menu__links{
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem; /* "rem" é uma unidade de medidas no css, uma medida relativa, que vai trabalhar com o "root element" que r=seria o elemento raiz, a pagina html */
+    /* 1 rem, equivale à 16px em geral, então pegamos nossos 36 pixes e dividimos por 16 */
+    /* Nesse caso ele vai interagir com o tamanho da fonte que o usuario escolheu nas configurações de seu disposivo e irá aplicar esse tamhanho em nosso */
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none; /* para remover a estilização padrão do navegador */
+}
+
+.cabecalho__menu__links:hover{
+    font-size: 1.54rem; 
+    color: var(--cor-secundaria);
+}
+
+.apresentacao {
+    padding: 5% 15%; /* trocamos o margin por padding, pois temos muitos elementos na pagina */
+    display: flex; /* vai deixar todos os elementos da pagina em uma certa direção, por padrão deixa em row (linha/horizontal), mas pode ser alterado para collum (coluna/vertical) */
+    align-items: center; /* alinha os elementos na direção que você pedir */
+    justify-content: space-between;/* cria um espaço entre os elementos */
+    gap: 96px;
+} 
+
+.apresentacao__conteudo {
+    width: 50%; /* alteramos as alturas de alguns elemento de pixes(valor absoluto) para % (valor relativo), assim o site se adequa à mais telas e seus diferentes tamanhos */
+    /* a % é sempre relativa ao elemento pai, nesse caso significa que a classe "apresentacao__conteudo" ocupará 50% do elemento pai que seria o "section" */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* gap para criar uma distancia/lacuna entre os elementos */
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem; /* definimos o tamanho da fonte para 36 pixes */
+    font-family: var(--font-primaria); /* pegamos essa font no site google fonts, vem o codigo todo */
+    font-weight: 400;
+    font-style: normal;
+}
+
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria); /* para definir a fonte */
+    font-optical-sizing: auto;    
+    font-style: normal;
+}
+
+.apresentacao__imagem{
+    width: 26.5rem;
+    /*width: 50%;*/
+    /*padding: 0% 0% 30% 0%;*/
+}
+
+.apresentacao__links{
+    display: flex;/* sempre que for utilizar o "space-between" (flexbox) tem que colocar a tag "display: flex;" */
+    flex-direction: column; /* vai mudar a orientação de nossos elementos, nesse caso vai deixar em coluna, mas o padrão do display flex é em row (linha) */
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px; /* pegamos o espaço no projeto(figma) e utilizamos o gap para criar espaços iguais entre cada um dos elementos  */
+
+}
+
+.apresentacao__links__titulo{
+    font-family: var(--font-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__botoes{
+    /*background-color: #22D44D;*/
+    display: flex; /* colocamos um display flex aqui para alterar a posição do icone comparado ao texto dentro do botão */
+    justify-content: center; /* para colocar tanto icone como o texto no centro do botão*/
+    gap: 16px; /* para distanciar o icone do texto */
+    border: 2px solid var(--cor-terciaria); /* criamos uma borda definimos ela com 2px de largura, como solida e escolhemos uma cor */
+    width: 378px; /* coloquei altura também e cagou tudo, tome cuidado */
+    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 21.5px 0px; /* se colocamos dois valores no padding um será vertical e outo horizontal, respectivamente... não pode por virgula ksksksks tipo "21.5px, 0px" */
+    text-align: center; /* para alinhar o texto kskskskksk */
+    text-decoration: none; /* para tirar a "decoração" do texto que vem padrão pelo navegador, nesse caso foi o sublinhado */
+    color: var(--cor-secundaria);
+    font-family: var(--font-secundaria);
+    font-weight: 600; /* "peso" da fonte */
+
+}
+
+/* MUITO INTERRESANTE*/
+.apresentacao__links__botoes:hover{ /* utilizamos os "class/tag:hover{}" para dar aquele efeito "clicavel no botão ou link" */
+    background-color: var(--cor--hover);
+    height: 35px;
+    width: 380px;
+} 
+
+/*.apresentacao__imagem:hover{
+    height: 700px;
+    width: 700px;
+}*/
+
+.rodape{
+    padding: 24px; /* a distancia do conteudo até a borda da "caixa" */
+    background-color: var(--cor-terciaria);  
+    color: var(--cor-primaria);
+    text-align: center; /* para alinhar o texto, tentei usar o "align-items" e o display flex com o "space-between", mas não funcionou */
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.eu:hover{
+    font-size: 1.56rem;
+    color: var(--cor-hover-eu);
+}
+
+/* usando media, para fazer uma adaptação do site para o mobile */
+@media (max-width: 1200px) { /* "mediaQuerie s" funciona como um "if/else" de outras linguagens de programação */
+    /* abrimos parentesens para colocar as condições */
+
+    .cabecalho{
+        padding: 10%;
+    }
+
+    .cabecalho__menu{ /* como já ultilizamos a tag "display-flex" nesta class anteriomente, não precisamos usar novamente, pois o css já puxa essas informações lá de cima */
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse; /* com o "column-reverse" fizemos com que o display-flex apresente os elementos em coluna, mas ao contrario do configurado */
+        padding: 5%; /* diminuimos o padding para que que nosso conteudo não pareça compactado */
+    }
+
+    .apresentacao__conteudo{ /* como anteriomente, tinhamos definido a width dessa clase para 50% para telas grandes, essa propriedade fez com que o padding não fosse aplicado corretamente */
+        width: auto; /* o "auto" faz com que o conteudo preencha todo o espaço do padding, assim resolvemos o problema causado anteriormente */
+    }
+
+    .apresentacao__imagem{
+        width: 50%;
+    }
+}

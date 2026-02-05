@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    
+<html lang="pt-br">
+
+<head>
+
+    <title>Portifolio</title>
+    <meta charset="UTF-8"> <!-- definido os caracteres brasileiros -->
+    <meta http-equiv="X-UA-Compatiple" content="IE=edge"> <!-- para o site ser compativel com versão recentes do egde -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- para o site se adaptar à telas de diferentes dispositivos -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+
+<body>
+
+    <header class="cabecalho"> <!-- barra superior da pagina que costuma à ter os links de navegações para outras paginas  -->
+
+        <nav class="cabecalho__menu"> <!-- utilizamos a tag "nav" de forma semantica para marcar elementos de navegação -->
+
+            <a class="cabecalho__menu__links" href="index.html">Home</a> <!-- href="" para redirecionar para outra pagina-->
+            <a class="cabecalho__menu__links" href="about.html">Sobre Mim</a>
+
+        </nav>
+
+    </header>
+
+    <main class="apresentacao"> <!-- PAI -->
+        
+        <section class="apresentacao__conteudo"> <!-- para poder aguapar todos esses elementos com apenas um--> <!-- FILHO -->
+            <!-- para dar uma class à um filho, usamos o nome do pai e o "__" dois underline e depois o nome do filho -->
+
+            <h1 class="apresentacao__conteudo__titulo">Eleve seu negócio digital a outro nível <strong class="titulo-destaque">com um Front-end de qualidade!</strong></h1>
+            <p class="apresentacao__conteudo__texto">Olá! Sou Joana Santos, desenvolvedora Front-end com especialidade em <strong>React, HTML e CSS</strong>. Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?</p>
+            
+            <div class="apresentacao__links" >
+                <h2 class="apresentação__links__titulo">Acesse minhas redes:</h2>
+                
+                <!-- Tenho que fazer o icone para o whatsaap depois -->
+                <!--<a href="https://wa.me/qr/WLXQK4JIYKGQB1" class="apresentacao__links__botoes">
+                <img src="./assets/whatsapp.jpg">    
+                Whatsapp</a> --> <!-- como os botões vão ser iguais, vamos colocar eles na mesma classe para não ter que estiliza-los individualmente -->
+                
+                <a href="" class="apresentacao__links__botoes">
+                <img src="./assets/linkedin.png"> <!-- podemos e para o resultado que queremos, devemos colocar a imagem dentro do link -->   
+                Linkedin</a>
+                
+                <a href="" class="apresentacao__links__botoes">
+                <img src="./assets/github.png"> <!-- para a imagem aparecer corretamente no site, devemos incluir a pasta que ela esta com "./nomeDaPasta/" -->    
+                Github
+                </a>
+            </div>
+
+        </section> <!-- assim temos apenas dois elemntos filhos dentro do pai (main)--> <!-- 1 -->
+
+        <img src="./assets/imagem.png" alt="Foto da Joana Santos programando" class="apresentacao__imagem"> <!-- FILHO --> <!-- 2 -->
+
+    </main>
+
+    <footer class="rodape">
+
+        <p> Projeto por <em class="eu"> Richard Arthur </em> </p>
+
+    </footer>
+
+</body>
+
+</html>
